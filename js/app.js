@@ -321,22 +321,7 @@ function closeSidebar() {
 // renderBarang, renderKategori, renderRuangan
 // sudah didefinisikan di barang.js, kategori.js, ruangan.js
 // renderTransaksi → didefinisikan di transaksi.js
-async function renderPeminjaman() {
-  document.getElementById('page-container').innerHTML = `
-    <div style="padding:3rem;text-align:center;color:#6B6B6B">
-      <div style="font-size:40px;margin-bottom:1rem">📋</div>
-      <div style="font-weight:600;margin-bottom:8px">Peminjaman</div>
-      <div style="font-size:13px">Akan dibangun di Tahap 5</div>
-    </div>`;
-}
-async function renderPengembalian() {
-  document.getElementById('page-container').innerHTML = `
-    <div style="padding:3rem;text-align:center;color:#6B6B6B">
-      <div style="font-size:40px;margin-bottom:1rem">↩️</div>
-      <div style="font-weight:600;margin-bottom:8px">Pengembalian</div>
-      <div style="font-size:13px">Akan dibangun di Tahap 5</div>
-    </div>`;
-}
+// renderPeminjaman & renderPengembalian → didefinisikan di peminjaman.js
 async function renderLaporan() {
   document.getElementById('page-container').innerHTML = `
     <div style="padding:3rem;text-align:center;color:#6B6B6B">
