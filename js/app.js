@@ -320,14 +320,7 @@ function closeSidebar() {
 // (akan diisi di Tahap 3–6)
 // renderBarang, renderKategori, renderRuangan
 // sudah didefinisikan di barang.js, kategori.js, ruangan.js
-async function renderTransaksi() {
-  document.getElementById('page-container').innerHTML = `
-    <div style="padding:3rem;text-align:center;color:#6B6B6B">
-      <div style="font-size:40px;margin-bottom:1rem">🔄</div>
-      <div style="font-weight:600;margin-bottom:8px">Barang Masuk & Keluar</div>
-      <div style="font-size:13px">Akan dibangun di Tahap 4</div>
-    </div>`;
-}
+// renderTransaksi → didefinisikan di transaksi.js
 async function renderPeminjaman() {
   document.getElementById('page-container').innerHTML = `
     <div style="padding:3rem;text-align:center;color:#6B6B6B">
