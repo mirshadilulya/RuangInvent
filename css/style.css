@@ -1,0 +1,284 @@
+/* ============================================================
+   RuangInvent — style.css
+   CSS tambahan & print stylesheet
+   ============================================================ */
+
+/* ── Form elements global ── */
+input, select, textarea {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="search"],
+select,
+textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1.5px solid #E2E0DA;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #1C1C1C;
+  background: #fff;
+  transition: border-color 0.15s;
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #1A3C5E;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1C1C1C;
+  margin-bottom: 5px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* ── Tabel data ── */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.data-table th {
+  background: #F4F3EF;
+  text-align: left;
+  padding: 10px 14px;
+  font-weight: 600;
+  font-size: 12px;
+  color: #6B6B6B;
+  border-bottom: 1px solid #E2E0DA;
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #F0EEE8;
+  vertical-align: middle;
+}
+
+.data-table tr:last-child td { border-bottom: none; }
+
+.data-table tr:hover td { background: #FAFAF8; }
+
+/* ── Empty state ── */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6B6B6B;
+}
+
+.empty-state .icon { font-size: 40px; margin-bottom: 1rem; }
+.empty-state .title { font-weight: 600; font-size: 15px; margin-bottom: 6px; color: #1C1C1C; }
+.empty-state .desc { font-size: 13px; }
+
+/* ── Modal ── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  animation: modalIn 0.2s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.96) translateY(10px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0); }
+}
+
+.modal-header {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #E2E0DA;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1C1C1C;
+}
+
+.modal-close {
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  border: none;
+  background: #F4F3EF;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.modal-close:hover { background: #E2E0DA; }
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #E2E0DA;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* ── Toolbar (search + filter + tombol tambah) ── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #E2E0DA;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 180px;
+  position: relative;
+}
+
+.search-input input {
+  padding-left: 34px;
+}
+
+.search-input::before {
+  content: '🔍';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  pointer-events: none;
+}
+
+.filter-select {
+  width: auto;
+  min-width: 120px;
+}
+
+/* ── Badge / pill status ── */
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+.badge-baik     { background: #F0FDF4; color: #166534; }
+.badge-cukup    { background: #FFFBEB; color: #92400E; }
+.badge-rusak    { background: #FEF2F2; color: #991B1B; }
+.badge-hilang   { background: #F3F4F6; color: #374151; }
+.badge-aktif    { background: #EFF6FF; color: #1E40AF; }
+.badge-selesai  { background: #F0FDF4; color: #166534; }
+.badge-terlambat{ background: #FEF2F2; color: #991B1B; }
+.badge-masuk    { background: #F0FDF4; color: #166534; }
+.badge-keluar   { background: #FEF2F2; color: #991B1B; }
+
+/* ── Action buttons di tabel ── */
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.15s;
+}
+
+.action-btn-edit   { background: #EFF6FF; }
+.action-btn-edit:hover   { background: #DBEAFE; }
+.action-btn-delete { background: #FEF2F2; }
+.action-btn-delete:hover { background: #FEE2E2; }
+.action-btn-view   { background: #F0FDF4; }
+.action-btn-view:hover   { background: #DCFCE7; }
+
+/* ── Print stylesheet ── */
+@media print {
+  .sidebar,
+  .topbar,
+  .topbar-actions,
+  .hamburger,
+  .toast-container,
+  .loading-overlay,
+  .toolbar,
+  .action-btn,
+  .stats-grid,
+  .btn-ghost,
+  .btn-primary,
+  #btn-print-cancel {
+    display: none !important;
+  }
+
+  body, .main {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 12px !important;
+  }
+
+  .main { margin-left: 0 !important; }
+
+  #page-container {
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  .print-header {
+    display: block !important;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #000;
+  }
+
+  .data-table {
+    font-size: 11px;
+  }
+
+  .data-table th { background: #f0f0f0 !important; }
+
+  @page {
+    margin: 1.5cm;
+  }
+}
+
+.print-header { display: none; }
