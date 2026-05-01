@@ -1,62 +1,39 @@
 # RuangInvent 📦
+**Sistem Inventaris Sekolah** — berbasis web, tanpa backend, data tersimpan di Google Drive.
 
-Sistem Inventaris Sekolah berbasis web — dibangun dengan HTML, CSS, dan JavaScript murni. Data tersimpan di Google Drive, tanpa backend atau server tambahan.
+🌐 **Live:** [https://mirshadilulya.github.io/RuangInvent/](https://mirshadilulya.github.io/RuangInvent/)
 
-## 🌐 Demo
-[https://mirshadilulya.github.io/RuangInvent/](https://mirshadilulya.github.io/RuangInvent/)
+---
 
-## ✨ Fitur
-- Manajemen barang (tambah, edit, hapus, filter, foto, QR code)
-- Barang masuk & keluar dengan update stok otomatis
-- Peminjaman & pengembalian lengkap dengan status terlambat
-- Kelola ruangan & kategori
-- 5 jenis laporan + cetak PDF
-- Multi akun dengan sistem role (Super Admin, Operator, Viewer)
-- Login via Google OAuth 2.0
-- Data tersimpan di Google Drive pribadi
+## ✨ Fitur Lengkap
+
+| Modul | Fitur |
+|-------|-------|
+| 📦 **Manajemen Barang** | Tambah, edit, hapus, filter, foto, QR Code |
+| 🔄 **Barang Masuk & Keluar** | Pencatatan + stok otomatis + riwayat |
+| 📋 **Peminjaman** | Form lengkap + deteksi terlambat otomatis |
+| ↩️ **Pengembalian** | Proses + catatan kondisi + riwayat |
+| 🏫 **Ruangan** | Kelola lokasi + jumlah barang per ruangan |
+| 🏷️ **Kategori** | Kelola kategori + jumlah per kategori |
+| 📊 **Laporan PDF** | 5 jenis laporan + cetak PDF |
+| ⚙️ **Pengaturan** | Profil + kelola role user + statistik |
+
+## 👥 Sistem Role
+- 👑 Super Admin — akses penuh
+- 🔧 Operator — kelola barang & transaksi
+- 👁️ Viewer — lihat & ajukan peminjaman
 
 ## 🛠️ Teknologi
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Auth**: Google Identity Services (OAuth 2.0)
-- **Storage**: Google Drive API v3 (file JSON)
-- **Hosting**: GitHub Pages
-
-## 🚀 Setup & Penggunaan
-
-### 1. Konfigurasi
-Edit file `config.js` dan isi `CLIENT_ID` dengan Client ID Google Cloud-mu.
-
-### 2. Google Cloud Console
-- Aktifkan **Google Drive API** dan **Google People API**
-- Tambahkan authorized origins: `https://mirshadilulya.github.io`
-- Tambahkan authorized redirect URI: `https://mirshadilulya.github.io/RuangInvent/`
-
-### 3. Deploy
-Push ke branch `main` — GitHub Pages akan otomatis deploy.
+Vanilla JS · Google OAuth 2.0 · Google Drive API · QRCode.js · GitHub Pages
 
 ## 📁 Struktur File
 ```
 RuangInvent/
-├── index.html       # Dashboard utama (SPA)
-├── login.html       # Halaman login
-├── config.js        # Konfigurasi CLIENT_ID
-├── css/
-│   └── style.css    # Styling global
+├── index.html / login.html / config.js
+├── css/style.css
 └── js/
-    ├── app.js       # Router & logika utama
-    ├── auth.js      # OAuth & sistem role
-    ├── drive.js     # Google Drive API
-    ├── barang.js    # Manajemen barang
-    ├── transaksi.js # Barang masuk/keluar
-    ├── peminjaman.js# Peminjaman & pengembalian
-    └── laporan.js   # Laporan & PDF
+    ├── app.js · auth.js · drive.js
+    ├── barang.js · kategori.js · ruangan.js
+    ├── transaksi.js · peminjaman.js
+    ├── laporan.js · pengaturan.js
 ```
-
-## 👥 Sistem Role
-| Role | Akses |
-|------|-------|
-| Super Admin | Semua fitur + kelola user |
-| Operator | Kelola barang, transaksi, peminjaman |
-| Viewer | Hanya ajukan peminjaman |
-
-Admin pertama yang login otomatis menjadi Super Admin.
