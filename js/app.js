@@ -322,29 +322,5 @@ function closeSidebar() {
 // sudah didefinisikan di barang.js, kategori.js, ruangan.js
 // renderTransaksi → didefinisikan di transaksi.js
 // renderPeminjaman & renderPengembalian → didefinisikan di peminjaman.js
-async function renderLaporan() {
-  document.getElementById('page-container').innerHTML = `
-    <div style="padding:3rem;text-align:center;color:#6B6B6B">
-      <div style="font-size:40px;margin-bottom:1rem">📊</div>
-      <div style="font-weight:600;margin-bottom:8px">Laporan</div>
-      <div style="font-size:13px">Akan dibangun di Tahap 6</div>
-    </div>`;
-}
-async function renderPengaturan() {
-  const user = Auth.getUser();
-  document.getElementById('page-container').innerHTML = `
-    <div style="padding:2rem;max-width:480px">
-      <div style="font-weight:600;font-size:16px;margin-bottom:1.5rem">Profil Akun</div>
-      <div style="display:flex;align-items:center;gap:16px;padding:1.25rem;background:#F4F3EF;border-radius:12px;margin-bottom:1.5rem">
-        <img src="${user?.picture || ''}" style="width:56px;height:56px;border-radius:50%;object-fit:cover" onerror="this.style.display='none'">
-        <div>
-          <div style="font-weight:600;font-size:15px">${user?.name || '—'}</div>
-          <div style="font-size:13px;color:#6B6B6B">${user?.email || '—'}</div>
-          <div style="font-size:12px;margin-top:4px;padding:2px 8px;border-radius:100px;background:#E8F5E9;color:#1B5E20;display:inline-block">
-            ${user?.role === 'superadmin' ? '👑 Super Admin' : user?.role === 'operator' ? '🔧 Operator' : '👁️ Viewer'}
-          </div>
-        </div>
-      </div>
-      <div style="font-size:13px;color:#6B6B6B">Pengaturan lengkap akan ditambahkan di Tahap 6.</div>
-    </div>`;
-}
+// renderLaporan   → didefinisikan di laporan.js
+// renderPengaturan → didefinisikan di pengaturan.js
